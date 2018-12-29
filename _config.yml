@@ -1,7 +1,7 @@
 # Site settings
 title: Longniao's Blog
 SEOTitle: 龙鸟的博客 | Longniao's Blog
-header-img: img/post-bg-desk.jpg
+header-img: img/post-bg-github-cup.jpg
 email: longniao@gmail.com
 description: "Every failure is leading towards success."
 keyword: "longniao,blog,龙鸟,博客,php,python,java,golang"
@@ -12,7 +12,7 @@ github_repo: "https://github.com/longniao/longniao.github.io.git"
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Goals determine what you going to be!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/about-me.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # SNS settings
 RSS: false
