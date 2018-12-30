@@ -1,0 +1,127 @@
+---
+layout: post
+title: Mac上安装PHP7及相关扩展
+excerpt: 在Mac上安装PHP7及相关扩展的笔记。
+---
+
+- 第一种，可以去官网上下源码去编译。
+- 第二种，可以使用我们的第三方包来安装，比如说homebrew。本文就会讲述如何使用这种方法安装。
+
+## 安装PHP7
+
+- 首先我们需要安装[Homebrew](http://brew.sh/)
+- 通过brew来安装：
+
+```
+$ brew tap homebrew/dupes  
+$ brew tap homebrew/versions  
+$ brew tap homebrew/homebrew-php  
+
+//安装PHP7  
+$ brew install php70
+
+//删掉旧版本，我以前安装的是PHP5.6    
+$ brew unlink php56
+$ brew link php70
+
+//完成
+$ php -v
+PHP 7.0.0 (cli) (built: Dec  2 2015 13:06:23) ( NTS )
+Copyright (c) 1997-2015 The PHP Group
+Zend Engine v3.0.0, Copyright (c) 1998-2015 Zend Technologies
+```
+
+## 安装Yaf
+
+在[pecl](http://pecl.php.net/package/yaf)找到yaf最新版源码[3.0.2](http://pecl.php.net/get/yaf-3.0.2.tgz)
+
+
+```
+$ //下载
+$ wget http://pecl.php.net/get/yaf-3.0.2.tgz
+$ tar zxvf yaf-3.0.2.tgz
+$ cd yaf-3.0.2
+
+$ //编译
+$ /usr/local/opt/php70/bin/phpize
+$ ./configure --with-php-config=/usr/local/opt/php70/bin/php-config
+$ make && make install
+
+$ Installing shared extensions:     /usr/local/Cellar/php70/7.0.5/lib/php/extensions/no-debug-non-zts-20151012/
+$ cd ..
+```
+
+## 安装Redis
+
+```
+//下载
+$ wget -c https://github.com/phpredis/phpredis/archive/php7.zip
+$ unzip php7.zip
+$ cd phpredis-php7
+
+//编译
+$ /usr/local/opt/php70/bin/phpize
+$ ./configure --with-php-config=/usr/local/opt/php70/bin/php-config
+$ make
+$ make install
+$ cd ..
+```
+
+## 安装Memcache和Memcached
+
+```
+//brew install
+$ brew install --HEAD homebrew/php/php70-memcached
+
+//源码编译
+$ wget https://github.com/websupport-sk/pecl-memcache/archive/php7.zip
+$ unzip php7.zip
+$ cd pecl-memcache
+$ /usr/local/opt/php70/bin/phpize
+$ ./configure --with-php-config=/usr/local/opt/php70/bin/php-config
+$ make && make install
+```
+
+## 安装Swoole
+
+```
+//下载
+$ wget -c https://github.com/swoole/swoole-src/archive/swoole-1.7.21-stable.tar.gz
+$ tar zxvf swoole-1.7.21-stable.tar.gz
+$ cd swoole-src-swoole-1.7.21-stable/
+
+//编译
+$ /usr/local/opt/php70/bin/phpize
+$ ./configure --with-php-config=/usr/local/opt/php70/bin/php-config
+$ make
+$ make install
+$ cd ..
+```
+
+## 添加扩展配置
+
+```
+mkdir -p /usr/local/etc/php/7.0/conf.d
+cd /usr/local/etc/php/7.0/conf.d
+
+vim cat ext-yaf.ini
+
+    [memcache]
+    extension="/usr/local/Cellar/php70/7.0.5/lib/php/extensions/no-debug-non-zts-20151012/yaf.so"
+
+依次添加
+...
+
+```
+
+## 推荐安装的php扩展
+
+- [SCWS分词](https://github.com/hightman/scws) 
+- [raphf](http://pecl.php.net/package/raphf) 
+- [propro](http://pecl.php.net/package/propro)
+- [thrift_protocol](http://thrift.apache.org/download)
+- [imagick](http://pecl.php.net/package/imagick)
+- [zookeeper](http://pecl.php.net/package/zookeeper)
+- [xhprof](http://pecl.php.net/package/xhprof) `PHP性能分析工具`
+- [http.so](http://pecl.php.net/package/pecl_http)
+- [Seaslog](https://github.com/Neeke/SeasLog)

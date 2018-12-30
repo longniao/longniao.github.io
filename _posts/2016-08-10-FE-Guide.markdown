@@ -1,0 +1,148 @@
+---
+layout: post
+title: 前端学习之路
+excerpt: 想成为前端工程师吗？这里汇总了一些资料可供参考。
+---
+#### 入门
+
+- [若想学 HTML, 应从哪里入门?](https://www.zhihu.com/question/19753196)
+
+- [想成为前端工程师,那么在大学期间应该如何规划](https://www.zhihu.com/question/19838787)
+
+- [如何自学计算机前端开发? 精细的自学步骤是什么样的?](https://www.zhihu.com/question/39721183)
+
+- [如何帮助前端新人入门和提高](https://www.zhihu.com/question/19862294)
+
+- [web前端有哪些很普遍的经验供新手学?](https://www.zhihu.com/question/28842531)
+
+- [前端工程师应该对 HTTP 了解到什么程度? 从哪些途径去熟悉更好?](https://www.zhihu.com/question/20391668)
+
+- [0基础到成为前端工程师需要多久? 从哪里入门? 最大的困难是什么?](https://www.zhihu.com/question/31152541)
+
+- [Web 前端需要熟悉大学里[高大上]计算机专业课吗?](https://www.zhihu.com/question/29178984)
+
+#### 进阶
+
+- [移动前端开发和 Web 前端开发的区别是什么](https://www.zhihu.com/question/20269059)
+
+- [怎样成长为一个优秀的前端开发工程师?](https://www.zhihu.com/question/19554845)
+
+- [一名合格的前端工程师的知识结构是怎样的?](https://www.zhihu.com/question/19588629)
+
+- [近几年前端工程师挺火,但是深入讲,前端工程师都能干些什么?](https://www.zhihu.com/question/38100109)
+
+- [如何学习前端模块化知识](https://www.zhihu.com/question/37011441)
+
+- [作为一名前端开发人员, 有哪些值得一读的 js 代码?](https://www.zhihu.com/question/27471576)
+
+- [好的前端主管是如何带队的?](https://www.zhihu.com/question/30093712)
+
+- [怎样才是优秀的前端工程师?](https://www.zhihu.com/question/30774735)
+
+- [前端开发基础扎实的标准是什么?](https://www.zhihu.com/question/38922374)
+
+- [前端小白前端小白阶段的项目都是在哪里找的~?](https://www.zhihu.com/question/32885190)
+
+- [大公司里怎样开发和部署前端代码?](https://www.zhihu.com/question/20790576)
+
+#### 项目
+
+- [百度前端学院](http://ife.baidu.com/task/all)
+
+- [你遇到过哪些代码优雅的前端项目?](https://www.zhihu.com/question/36930177)
+
+#### 简历
+
+- [一份优秀的前端开发工程师简历是怎么样的?](https://www.zhihu.com/question/23150301)
+
+- [如何面试前端工程师](https://www.zhihu.com/question/19568008)
+
+#### 入职
+
+- [对即将入职前端工作的新人有哪些建议?](https://www.zhihu.com/question/37176452)
+
+- [前端开发与后台开发如何协作?](https://www.zhihu.com/question/27226086)
+
+#### 前端架构
+
+- [支付宝的前端架构是怎样的?](https://www.zhihu.com/question/27745724)
+
+- [美团的前端架构是怎样的?](https://www.zhihu.com/question/27745673)
+
+- [饿了么的前端架构是怎样的?](https://www.zhihu.com/question/27745647)
+
+- [百姓网的前端架构是怎样的?](https://www.zhihu.com/question/27734203)
+
+- [大搜车的前端架构是怎样的?](https://www.zhihu.com/question/27747813)
+
+- [前端架构是什么？需要什么能力?](https://www.zhihu.com/question/31948284)
+
+#### 其他
+
+- [Web 前端 IDE 用的都是什么啊?](https://www.zhihu.com/question/40128749)
+
+- [可以通过什么途径了解前端研发的最新资讯?](https://www.zhihu.com/question/29940477)
+
+- [前端工程师一般都喜欢去哪些网站逛?](https://www.zhihu.com/question/28478379)
+
+- [24岁女生转行做 web 前端晚吗?](https://www.zhihu.com/question/28008276)
+
+- [做 web 前端开发,培训靠谱还是自学靠谱?](https://www.zhihu.com/question/31059577)
+
+- [计算机基础知识不牢的前端都是瞎扯淡吗? 为什么? 对于前端来说哪些计算机基础知识很重要?](https://www.zhihu.com/question/35703265)
+
+- [你们的2016年前端学习计划是什么?](https://www.zhihu.com/question/39208186)
+
+- [怎么样培训前端工程师?](https://www.zhihu.com/question/36718802)
+
+- [大公司或专业团队目前流行的前端工具有什么?](https://www.zhihu.com/question/28638304)
+
+- [有哪些好用的前端开发软件？](https://www.zhihu.com/question/26339902)
+
+#### 前端开源 [Github]
+
+- [天猫前端](http://tmallfe.github.io/)
+    - [tmallfe/tmallfe.github.io - 天猫前端](https://github.com/tmallfe/tmallfe.github.io)
+
+- [sdc-alibaba/SUI-Mobile - 阿里巴巴国际UED前端出品的移动端UI库](https://github.com/sdc-alibaba/SUI-Mobile)
+    - [SUI Mobile](http://m.sui.taobao.org/components/)
+
+- [AlloyTeam/Mars - 腾讯移动 Web 前端知识库](https://github.com/AlloyTeam/Mars)
+
+- [JacksonTian/fks - 前端技能汇总](https://github.com/JacksonTian/fks)
+
+#### 面试
+
+- [hawx1993/Front-end-Interview-questions - 史上最全 前端开发面试问题及答案整理](https://github.com/hawx1993/Front-end-Interview-questions)
+
+- [初级前端面试需要带什么作品?](https://www.zhihu.com/question/39486348)
+
+#### front-end 资源合集
+
+- [foru17/front-end-collect](https://github.com/foru17/front-end-collect)
+
+- [icepy/Front-End-Develop-Guide](https://github.com/icepy/Front-End-Develop-Guide)
+
+- [qiu-deqing/FE-learning](https://github.com/qiu-deqing/FE-learning)
+
+- [nieweidong/fetool](https://github.com/nieweidong/fetool)
+
+- [hawx1993/github-FE-project](https://github.com/hawx1993/github-FE-project)
+
+- [前端工程师如何系统地整理和累积兼容性相关的知识？](https://www.zhihu.com/question/20984284)
+
+- [最全前端资源汇集](http://www.jianshu.com/p/c3dae0951f74#)
+
+- [Web 前端开发学习之路（入门篇）](http://www.jianshu.com/p/b9ad2af81e35)
+
+- [最全前端知识体系](http://www.jianshu.com/p/966a4cc8f87a)
+
+- [前端资源教程收集 Front-end-tutorial](http://www.jianshu.com/p/711dab6e89a6)
+
+- [web前端网站收藏](http://www.jianshu.com/p/4u7qwZ)
+
+- [WEB前端知识总结](http://note.youdao.com/share/?id=88dcb69d8ed718cf6bc2980072bdd511&type=note#/)
+
+- [我写的前端文章 导航页](http://www.jianshu.com/p/636f0ade9971)
+
+- [github上值得关注的前端项目](https://segmentfault.com/a/1190000002804472)
