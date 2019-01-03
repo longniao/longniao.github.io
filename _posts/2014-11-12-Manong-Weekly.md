@@ -1,7 +1,13 @@
 ---
-layout: post
-title: 码农周刊分类整理
-excerpt: 码农周刊的类别分的比较大，不易于后期查阅，所以我把每期的内容按语言或技术进行了分类整理。
+layout:     post
+title:      码农周刊分类整理
+subtitle:   码农周刊的类别分的比较大，不易于后期查阅，所以我把每期的内容按语言或技术进行了分类整理。
+date:       2014-11-12
+author:     Longniao
+header-img: img/post-manong.jpg
+catalog: true
+tags:
+    - 码农周刊
 ---
 
 码农周刊的类别分的比较大，不易于后期查阅，所以我把每期的内容按语言或技术进行了分类整理。  

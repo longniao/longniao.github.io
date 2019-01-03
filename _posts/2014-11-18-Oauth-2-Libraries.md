@@ -1,7 +1,13 @@
 ---
-layout: post
-title: OAuth 2.0 Libraries
-excerpt: OAuth 2.0 is the next evolution of the OAuth protocol which was originally created in late 2006. OAuth 2.0 focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and living room devices. This specification is being developed within the IETF OAuth WG and is based on the OAuth WRAP proposal.
+layout:     post
+title:      OAuth 2.0 Libraries
+subtitle:   OAuth 2.0 is the next evolution of the OAuth protocol which was originally created in late 2006. OAuth 2.0 focuses on client developer simplicity while providing specific authorization flows for web applications, desktop applications, mobile phones, and living room devices. This specification is being developed within the IETF OAuth WG and is based on the OAuth WRAP proposal.
+date:       2014-11-18
+author:     Longniao
+header-img: img/post-oauth.jpg
+catalog: true
+tags:
+    - OAuth
 ---
             
 ## OAuth 2.0

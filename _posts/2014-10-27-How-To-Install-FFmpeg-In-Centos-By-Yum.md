@@ -1,7 +1,15 @@
 ---
-layout: post
-title: 使用yum在centos下安装最新版的ffmpeg
-excerpt: 使用yum在centos下安装最新版的ffmpeg。
+layout:     post
+title:      使用yum在centos下安装最新版的ffmpeg
+subtitle:   使用yum在centos下安装最新版的ffmpeg。
+date:       2014-10-27
+author:     Longniao
+header-img: img/post-ffmpeg.jpg
+catalog: true
+tags:
+    - Yum
+    - Centos
+    - Ffmpeg
 ---
 
 首先安装编译环境,如果系统有就不用安装了。

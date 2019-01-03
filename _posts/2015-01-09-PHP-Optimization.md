@@ -1,7 +1,14 @@
 ---
-layout: post
-title: PHP优化杂烩
-excerpt: 讲 PHP 优化的文章往往都是教大家如何编写高效的代码，本文打算从另一个角度来讨论问题，教大家如何配置高效的环境，如此同样能够达到优化的目的。
+layout:     post
+title:      PHP优化杂烩
+subtitle:   讲 PHP 优化的文章往往都是教大家如何编写高效的代码，本文打算从另一个角度来讨论问题，教大家如何配置高效的环境，如此同样能够达到优化的目的。
+date:       2015-01-09
+author:     Longniao
+header-img: img/post-php.jpg
+catalog: true
+tags:
+    - PHP
+    - 优化
 ---
 讲 PHP 优化的文章往往都是教大家如何编写高效的代码，本文打算从另一个角度来讨论问题，教大家如何配置高效的环境，如此同样能够达到优化的目的。
 
